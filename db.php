@@ -4,20 +4,20 @@
 include_once('config/con.php');
 
 if(isset($_POST['btn'])){
-  $name=$_POST['n'];
-  $dob=$_POST['dob'];
-  $user=$_POST['username'];
-  $pass=$_POST['pass'];
-  $repeat=$_POST['rp'];
-  $id=$_POST['id'];
-  $num=$_POST['con'];
-  $address=$_POST['add'];
-  $gender=$_POST['gen'];
-  $adhar=$_POST['adhar'];
-  $sub=$_POST['sub'];
-  $project=$_POST['pro'];
+  @$name=$_POST['n'];
+  @$dob=$_POST['dob'];
+  @$user=$_POST['username'];
+  @$pass=$_POST['pass'];
+  @$repeat=$_POST['rp'];
+  @$id=$_POST['id'];
+  @$num=$_POST['con'];
+  @$address=$_POST['add'];
+  @$gender=$_POST['gen'];
+  @$adhar=$_POST['adhar'];
+  @$sub=$_POST['sub'];
+  @$project=$_POST['pro'];
   
-  $convert=implode(",",$sub);
+  @$convert=implode(",",$sub);
 
   $data_insert="INSERT INTO login(name,dob,user_name,password,repeat_password,student_id,contact_no,address,gender,adhar_card,subjects,project) values('$name','$dob', '$user','$pass','$repeat','$id','$num','$address','$gender','$adhar','$convert','$project')";
   $check=mysqli_query($result,$data_insert);
